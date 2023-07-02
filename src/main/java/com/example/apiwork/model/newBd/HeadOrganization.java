@@ -1,7 +1,7 @@
-package com.example.MPTSait.model.newBd;
+package com.example.apiwork.model.newBd;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
 
 import java.util.List;
 
@@ -14,26 +14,23 @@ public class HeadOrganization {
     @Column(length = 50, nullable = false)
     private String lastnameOrg;
     @Column(length = 50, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String nameOrg;
     @Column(length = 50)
     private String surnameOrg;
 
     @Column(length = 50, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String post;
     @Column(length = 50, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String numberPhone;
     @Column(length = 50, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String email;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "headOrganization")
     @Column(nullable = false)
     private List<PracticeInformation> practices;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "base_practice_id", nullable = false)
     private BasePractice basePractice;
 

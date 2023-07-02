@@ -1,9 +1,8 @@
-package com.example.MPTSait.model.newBd;
+package com.example.apiwork.model.newBd;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
@@ -20,28 +19,25 @@ public class Employee {
     private String password;
 
     @Column(length = 20, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String nameEmployee;
     @Column(length = 20)
     private String surnameEmployee;
     @Column(length = 20, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String lastnameEmployee;
 
     @Column(length = 50, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String numberPhone;
     @Column(length = 50, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String email;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "employee")
     @Column(nullable = false)
     private List<PracticeInformation> practices;
 
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "postHeadId", nullable = false)
     private PostHead postHead;
 

@@ -1,5 +1,6 @@
-package com.example.MPTSait.model.newBd;
+package com.example.apiwork.model.newBd;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public class PostHead {
     @Column(length = 100, nullable = false)
     private String namePost;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "postHead")
     @Column(nullable = false)
     private List<Employee> employees;

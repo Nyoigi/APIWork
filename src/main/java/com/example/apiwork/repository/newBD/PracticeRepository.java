@@ -1,6 +1,6 @@
-package com.example.MPTSait.repository.newBD;
+package com.example.apiwork.repository.newBD;
 
-import com.example.MPTSait.model.newBd.Practice;
+import com.example.apiwork.model.newBd.Practice;
 import org.springframework.data.repository.CrudRepository;
 
 public interface PracticeRepository extends CrudRepository<Practice, Long> {

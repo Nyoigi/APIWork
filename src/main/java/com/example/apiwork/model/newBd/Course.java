@@ -1,5 +1,6 @@
-package com.example.MPTSait.model.newBd;
+package com.example.apiwork.model.newBd;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -14,10 +15,11 @@ public class Course {
     @Column(length = 50, nullable = false)
     private String nameCourse;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "specialization_id", nullable = false)
     private Specialization specialization;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "course")
     private List<Group> groups;
 

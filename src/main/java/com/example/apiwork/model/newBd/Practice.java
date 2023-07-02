@@ -1,6 +1,7 @@
-package com.example.MPTSait.model.newBd;
+package com.example.apiwork.model.newBd;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -22,10 +23,12 @@ public class Practice {
     @JoinColumn(name = "module_id", nullable = false)
     private ProfModule profModule;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "practice")
     @Column(nullable = false)
     private List<Schedule> schedules;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "practice")
     @Column(nullable = false)
     private List<PracticeInformation> practices;

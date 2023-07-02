@@ -1,5 +1,6 @@
-package com.example.MPTSait.model.newBd;
+package com.example.apiwork.model.newBd;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,6 +16,7 @@ public class ProfModule {
     @Column(length = 100, nullable = false)
     private String nameModule;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "profModule")
     private Practice practice;
 

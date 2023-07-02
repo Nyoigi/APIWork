@@ -1,6 +1,6 @@
-package com.example.MPTSait.repository.newBD;
+package com.example.apiwork.repository.newBD;
 
-import com.example.MPTSait.model.newBd.Specialization;
+import com.example.apiwork.model.newBd.Specialization;
 import org.springframework.data.repository.CrudRepository;
 
 public interface SpecializationRepository extends CrudRepository<Specialization, Long> {

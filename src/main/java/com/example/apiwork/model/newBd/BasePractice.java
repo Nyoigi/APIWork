@@ -1,8 +1,7 @@
-package com.example.MPTSait.model.newBd;
+package com.example.apiwork.model.newBd;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-import org.hibernate.validator.constraints.UniqueElements;
 
 import java.util.List;
 
@@ -14,22 +13,17 @@ public class BasePractice {
     private Long idBase;
 
     @Column(length = 50, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String nameOrganization;
     @Column(length = 100, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String adressOrganization;
     @Column(length = 50, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String numberPhone;
     @Column(length = 50, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String email;
     private String photoURL;
 
     private String URLAdress;
     @Column(length = 50, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String metro;
 
     public String getPhotoURL() {
@@ -48,6 +42,7 @@ public class BasePractice {
         this.URLAdress = URLAdress;
     }
 
+    @JsonIgnore
     @OneToMany(mappedBy = "basePractice", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<HeadOrganization> groups;
 

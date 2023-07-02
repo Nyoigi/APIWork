@@ -1,4 +1,4 @@
-package com.example.MPTSait.model.newBd;
+package com.example.apiwork.model.newBd;
 
 
 import jakarta.persistence.*;
@@ -15,7 +15,7 @@ public class Schedule {
 
     private Date endPractice;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "practice_id", nullable = false)
     private Practice practice;
 

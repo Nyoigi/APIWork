@@ -1,7 +1,7 @@
-package com.example.MPTSait.repository;
+package com.example.apiwork.repository;
 
-import com.example.MPTSait.model.newBd.Course;
-import com.example.MPTSait.model.newBd.Group;
+import com.example.apiwork.model.newBd.Course;
+import com.example.apiwork.model.newBd.Group;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

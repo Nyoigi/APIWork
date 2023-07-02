@@ -1,7 +1,7 @@
-package com.example.MPTSait.model.newBd;
+package com.example.apiwork.model.newBd;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
 
 import java.util.List;
 
@@ -14,15 +14,15 @@ public class Group {
     private Long idGroup;
 
     @Column(length = 20, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String nameGroup;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "course_id", nullable = false)
     private Course course;
 
 
+    @JsonIgnore
     @OneToMany(mappedBy = "group")
     private List<Student> students;
 

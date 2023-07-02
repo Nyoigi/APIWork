@@ -1,9 +1,8 @@
-package com.example.MPTSait.repository.newBD;
+package com.example.apiwork.repository.newBD;
 
 
-import com.example.MPTSait.model.newBd.Group;
-import com.example.MPTSait.model.newBd.Student;
-import jakarta.validation.constraints.NotEmpty;
+import com.example.apiwork.model.newBd.Group;
+import com.example.apiwork.model.newBd.Student;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

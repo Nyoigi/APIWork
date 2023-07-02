@@ -1,8 +1,8 @@
-package com.example.MPTSait.model.newBd;
+package com.example.apiwork.model.newBd;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
 
 import java.util.List;
 
@@ -14,12 +14,11 @@ public class Specialization {
     private Long idSpec;
 
     @Column(length = 20, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String numberSpec;
     @Column(length = 100, nullable = false)
-    @NotEmpty(message = "Отсутствует значение")
     private String nameSpec;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "specialization")
     private List<Course> courses;
 

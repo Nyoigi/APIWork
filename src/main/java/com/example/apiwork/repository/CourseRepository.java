@@ -1,7 +1,7 @@
-package com.example.MPTSait.repository;
+package com.example.apiwork.repository;
 
-import com.example.MPTSait.model.newBd.Course;
-import com.example.MPTSait.model.newBd.Specialization;
+import com.example.apiwork.model.newBd.Course;
+import com.example.apiwork.model.newBd.Specialization;
 import org.springframework.data.repository.CrudRepository;
 
 public interface CourseRepository extends CrudRepository<Course, Long> {

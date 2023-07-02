@@ -1,9 +1,7 @@
-package com.example.MPTSait.model.newBd;
+package com.example.apiwork.model.newBd;
 
 
 import jakarta.persistence.*;
-
-import java.util.List;
 
 @Entity
 public class ProfCompetencion {
@@ -18,7 +16,7 @@ public class ProfCompetencion {
     @Column(length = 100, nullable = false)
     private String nameCompetencion;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "profModuleID", nullable = false)
     private ProfModule profModule;
 

@@ -1,6 +1,6 @@
-package com.example.MPTSait.repository;
+package com.example.apiwork.repository;
 
-import com.example.MPTSait.model.newBd.PostHead;
+import com.example.apiwork.model.newBd.PostHead;
 import org.springframework.data.repository.CrudRepository;
 
 public interface PostHeadRepository extends CrudRepository<PostHead, Long> {

@@ -1,7 +1,7 @@
-package com.example.MPTSait.repository.newBD;
+package com.example.apiwork.repository.newBD;
 
-import com.example.MPTSait.model.newBd.Employee;
-import com.example.MPTSait.model.newBd.PostHead;
+import com.example.apiwork.model.newBd.Employee;
+import com.example.apiwork.model.newBd.PostHead;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
